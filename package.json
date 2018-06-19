@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "dotenv": "^6.0.0",
-    "pusher": "^2.0.0"
+    "noodle": "maddox/noodle#it"
   }
 }
