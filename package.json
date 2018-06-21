@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "noodle": "maddox/noodle#it"
-  },
+  "dependencies": {},
   "noodle": {
     "provider": "gcf",
     "functionName": "randomMuppet"
