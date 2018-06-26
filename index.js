@@ -2,6 +2,6 @@ const MUPPETS = ["Kermit", "Miss Piggy", "Fozzie", "Animal", "Scooter", "Skeeter
 
 exports.randomMuppet = (req, res) => {
   const muppet = MUPPETS[Math.floor(Math.random()*MUPPETS.length)]
-  console.log(`Returned a muppet i think: ${muppet}`)
+  console.log(`Returned a muppet! ${muppet}`)
   res.send(muppet)
 }
