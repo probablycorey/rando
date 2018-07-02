@@ -20,5 +20,6 @@ let render = (res, data) => {
 let gif = (search) => {
   let apiKey = 'HAgCZzuX7hV8yhRsJhKy96X7OxOx0nH8'
   let url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}`
+  console.log({url})
   return fetch(url)
 }
