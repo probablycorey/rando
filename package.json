@@ -4,6 +4,7 @@
     "functionName": "main"
   },
   "dependencies": {
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "handlebars": "^4.0.11"
   }
 }
