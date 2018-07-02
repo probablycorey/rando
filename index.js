@@ -6,8 +6,8 @@ let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
   let searchTerm = req.url.slice(1)
-  return gif(searchTerm).then(response => {
-    render(res, {data: JSON.stringify(response, null, 2)})
+  return gif(searchTerm).then(gifUrl => {
+    render(res, {data: gifUrl})
   })
 }
 
@@ -20,6 +20,11 @@ let render = (res, data) => {
 let gif = (search) => {
   let apiKey = 'HAgCZzuX7hV8yhRsJhKy96X7OxOx0nH8'
   let url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}`
-  console.log({url})
   return fetch(url)
+    .then(response => {
+      return response.json()
+    })
+    .then(json => {
+      return json.data[0].url
+    })
 }
