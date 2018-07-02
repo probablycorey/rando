@@ -6,8 +6,11 @@ let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
   let searchTerm = req.url.slice(1)
-  return gif(searchTerm).then(gifUrl => {
-    render(res, {data: gifUrl})
+  return gif(searchTerm).then(url => {
+    render(res, {
+      url: url,
+      term: searchTerm,
+    })
   })
 }
 
