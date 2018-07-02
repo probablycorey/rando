@@ -1,5 +1,5 @@
-import momemnt from 'moment'
+const moment = require('momemnt')
 
 exports.main = (req, res) => {
-  return moment().format("MMM Do YY");
+  return moment().format("MMM Do YY")
 }
