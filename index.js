@@ -14,6 +14,7 @@ exports.main = (req, res) => {
   })
 }
 
+
 let render = (res, data) => {
   let compiledTemplate = handlebars.compile(template)
   let html = compiledTemplate(data)
