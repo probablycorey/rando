@@ -6,7 +6,10 @@ exports.main = (req, res) => {
   let compiledTemplate = handlebars.compile(template)
   let html = compiledTemplate({
     name: 'corey',
-    req: JSON.stringify(req, null, 2)
+    url: JSON.stringify(req.url, null, 2),
+    params: JSON.stringify(req.params, null, 2),
+    query: JSON.stringify(req.query, null, 2),
+    route: JSON.stringify(req.route, null, 2),
   })
   res.send(html)
 }
