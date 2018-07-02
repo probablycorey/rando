@@ -1,7 +1,5 @@
-const MUPPETS = ["Kermit", "Miss Piggy", "Fozzie", "Animal", "Scooter", "Skeeter", "Rowlf", "Gonzo", "Bunsen", "Beaker"]
+import momemnt from 'moment'
 
-exports.randomMuppet = (req, res) => {
-  const muppet = MUPPETS[Math.floor(Math.random()*MUPPETS.length)]
-  console.log(`Returned another muppet! ${muppet}`)
-  res.send(`This muppet is named ${muppet}.`)
+exports.main = (req, res) => {
+  return moment().format("MMM Do YY");
 }
