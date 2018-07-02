@@ -6,7 +6,7 @@ exports.main = (req, res) => {
   let compiledTemplate = handlebars.compile(template)
   let html = compiledTemplate({
     name: 'corey',
-    req: req
+    params: JSON.stringify(req.params)
   })
   res.send(html)
 }
