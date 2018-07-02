@@ -1,12 +1,24 @@
 const handlebars = require('handlebars')
+const fetch = require('node-fetch')
 const fs = require('fs')
 
+let template = fs.readFileSync(__dirname + '/index.html').toString()
+
 exports.main = (req, res) => {
-  let template = fs.readFileSync(__dirname + '/index.html').toString()
-  let compiledTemplate = handlebars.compile(template)
-  let html = compiledTemplate({
-    name: 'corey',
-    params: JSON.stringify(req.params)
+  let searchTerm = req.url.slice(1)
+  return gif(searchTerm).then(response => {
+    render(res, {data: JSON.stringify(response, null, 2)})
   })
+}
+
+let render = (res, data) => {
+  let compiledTemplate = handlebars.compile(template)
+  let html = compiledTemplate(data)
   res.send(html)
+}
+
+let gif = (search) => {
+  let apiKey = 'HAgCZzuX7hV8yhRsJhKy96X7OxOx0nH8'
+  let url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}`
+  return fetch(url)
 }
