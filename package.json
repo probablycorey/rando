@@ -1,6 +1,9 @@
 {
   "noodle": {
     "provider": "gcf",
-    "functionName": "randomMuppet"
+    "functionName": "main"
+  },
+  "dependencies": {
+    "moment": "^2.22.2"
   }
 }
