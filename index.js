@@ -1,3 +1,3 @@
 exports.main = (req, res) => {
-  res.sendFile('index.html')
+  res.sendFile('index.html', {root: __dirname})
 }
