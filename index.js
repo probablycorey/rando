@@ -1,3 +1,9 @@
+const handlebars = require('handlebars')
+
 exports.main = (req, res) => {
-  res.sendFile('index.html', {root: __dirname})
+  let compiledTemplate = handlebars.compile('<h1>hi {{name}}</h1>')
+  let html = compiledTemplate({
+    name: 'corey'
+  })
+  res.send(html)
 }
