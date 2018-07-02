@@ -5,8 +5,8 @@ exports.main = (req, res) => {
   let template = fs.readFileSync(__dirname + '/index.html').toString()
   let compiledTemplate = handlebars.compile(template)
   let html = compiledTemplate({
-    name: 'corey'
+    name: 'corey',
+    req: JSON.stringify(req, null, 2)
   })
   res.send(html)
-  let
 }
