@@ -5,19 +5,25 @@ const fs = require('fs')
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
-  let searchTerm = req.url.slice(1)
+  if (req.url.match(/\/\w+\.\w+/)) {
+    let fileName = req.url.slice(1)
+    renderFile(fileName, {root: __dirname})
+  } else {
+    let searchTerm = req.url.slice(1)
+    return renderGif(res, searchTerm)
+  }
+}
+
+let renderGif = (res, searchTerm) => {
   return gif(searchTerm).then(url => {
-    render(res, {
+    let compiledTemplate = handlebars.compile(template)
+    let html = compiledTemplate({
       url: url,
       term: searchTerm,
     })
+    res.send(html)
   })
-}
 
-let render = (res, data) => {
-  let compiledTemplate = handlebars.compile(template)
-  let html = compiledTemplate(data)
-  res.send(html)
 }
 
 let gif = (search) => {
