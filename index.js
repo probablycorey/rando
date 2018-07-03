@@ -7,7 +7,7 @@ let template = fs.readFileSync(__dirname + '/index.html').toString()
 exports.main = (req, res) => {
   if (req.url.match(/\/\w+\.\w+/)) {
     let fileName = req.url.slice(1)
-    renderFile(fileName, {root: __dirname})
+    res.sendFile(fileName, {root: __dirname})
   } else {
     let searchTerm = req.url.slice(1)
     return renderGif(res, searchTerm)
