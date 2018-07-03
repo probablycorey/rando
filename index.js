@@ -5,12 +5,12 @@ const fs = require('fs')
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
-  console.log(JSON.stringify(req.params))
+  console.log(JSON.stringify(req.body.term))
   if (req.url.match(/\/\w+\.\w+/)) {
     let fileName = req.url.slice(1)
     res.sendFile(fileName, {root: __dirname})
   } else {
-    let searchTerm = req.url.slice(1)
+    let searchTerm = res, req.body.term
     return renderGif(res, searchTerm)
   }
 }
