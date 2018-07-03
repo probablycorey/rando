@@ -35,7 +35,7 @@ let gif = (search) => {
       return response.json()
     })
     .then(json => {
-      let url = json.data[0].images.original.url
+      let url = json.data[0] ? json.data[0].images.original.url : null
       return url
     })
 }
