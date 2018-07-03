@@ -9,7 +9,11 @@
 <body>
   {{#if term}}
     <h1>Searching for <span class="term">{{term}}</span>!!</h1>
-    <img src="{{url}}" />
+    {{#if url}}
+      <img src="{{url}}" />
+    {{else}}
+      <h2>No results for {{term}}</h2>
+    {{/if}}
   {{else}}
     <h1>Search for a gif</h1>
   {{/if}}
