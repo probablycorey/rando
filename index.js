@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 
 let template = fs.readFileSync(__dirname + '/index.html').toString()
-
+console.log('loaded')
 exports.main = (req, res) => {
   console.log(JSON.stringify(req.body))
   if (req.url.match(/\/\w+\.(html|css)/)) {
