@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="/main.css" />
 </head>
 <body>
-  <h1>Searching for {{term}}!!</h1>
-  <img src="{{url}}" />
+  {{#if term}}
+    <h1>Searching for {{term}}!!</h1>
+    <img src="{{url}}" />
+  {{else}}
+    <h1>Search for a gif</h1>
+  {{/if}}
+  
   <form action="/" method="get">
     <label for="term">Gif search : </label>
-    <input type="text" name="term" required>
+    <input type="text" name="term" value="{{term}}" required>
     <input type="submit" value="Search!">
   </form>
 </body>
