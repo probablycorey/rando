@@ -10,7 +10,7 @@ exports.main = (req, res) => {
     let fileName = req.url.slice(1)
     res.sendFile(fileName, {root: __dirname})
   } else {
-    let searchTerm = res, req.body.term
+    let searchTerm = req.body.term
     return renderGif(res, searchTerm)
   }
 }
