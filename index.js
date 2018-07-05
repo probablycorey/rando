@@ -6,10 +6,9 @@ const stringify = require('./stringify.js')
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
+  console.log(stringify(req))
   if (req.url.match(/\/\w+\.(html|css)/)) {
     let fileName = req.url.slice(1)
-    console.log('neat')
-    console.log(stringify(req))
     console.log(`rendering file ${fileName}`)
     res.sendFile(fileName, {root: __dirname})
   } else {
