@@ -1,12 +1,11 @@
 const handlebars = require('handlebars')
 const fetch = require('node-fetch')
 const fs = require('fs')
-const stringify = require('./stringify.js')
 
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
-  console.log(req.hostname, req.path)
+  console.log(req.hostname, req.path, request.rawBody)
   if (req.url.match(/\/\w+\.(html|css)/)) {
     let fileName = req.url.slice(1)
     console.log(`rendering file ${fileName}`)
