@@ -3,14 +3,15 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 
 let template = fs.readFileSync(__dirname + '/index.html').toString()
-console.log('loaded')
+
 exports.main = (req, res) => {
-  console.log(JSON.stringify(req.body))
   if (req.url.match(/\/\w+\.(html|css)/)) {
     let fileName = req.url.slice(1)
+    console.log(`rendering file ${fileName}`)
     res.sendFile(fileName, {root: __dirname})
   } else {
     let searchTerm = req.body.term
+    console.log(`rendering gif for ${searchTerm}`)
     return renderGif(res, searchTerm)
   }
 }
