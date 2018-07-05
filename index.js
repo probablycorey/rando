@@ -24,6 +24,7 @@ let renderGif = (res, searchTerm) => {
     let html = compiledTemplate({
       url: url,
       term: searchTerm,
+      baseUrl: "https://us-central1-vocal-circle-196621.cloudfunctions.net/probablycoreyRandoMaster"
     })
     res.send(html)
   })
