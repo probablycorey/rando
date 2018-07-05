@@ -8,7 +8,8 @@ let template = fs.readFileSync(__dirname + '/index.html').toString()
 exports.main = (req, res) => {
   if (req.url.match(/\/\w+\.(html|css)/)) {
     let fileName = req.url.slice(1)
-    console.log('neat', stringify(req))
+    console.log('neat')
+    console.log(stringify(req))
     console.log(`rendering file ${fileName}`)
     res.sendFile(fileName, {root: __dirname})
   } else {
