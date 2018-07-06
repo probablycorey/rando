@@ -5,7 +5,7 @@ const fs = require('fs')
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
-  console.log(JSON.stringify(process.env))
+  console.log(JSON.stringify(process.version))
   if (req.url.match(/\/\w+\.(html|css)/)) {
     let fileName = req.url.slice(1)
     console.log(`rendering file ${fileName}`)
