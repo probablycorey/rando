@@ -1,1 +1,1 @@
-# This is the greatest app. For true life..
+# This is the greatest app. For true life.
