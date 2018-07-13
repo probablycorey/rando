@@ -9,6 +9,8 @@
   "dependencies": {
     "moment": "^2.22.2",
     "handlebars": "^4.0.11",
-    "node-fetch": "^2.1.2"
+    "node-fetch": "^2.1.2",
+    "left": "^1.0.2",
+    "woo": "^1.0.0"
   }
 }
