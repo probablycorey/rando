@@ -1,7 +1,7 @@
 const handlebars = require('handlebars')
 const fetch = require('node-fetch')
 const fs = require('fs')
-//bloop
+//bloop bleep
 let template = fs.readFileSync(__dirname + '/index.html').toString()
 
 exports.main = (req, res) => {
