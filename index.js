@@ -1,1 +1,1 @@
-ok, this is index.js
+1
