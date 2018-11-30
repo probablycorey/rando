@@ -1,2 +1,1 @@
-# rando
-...........
+This is readme
