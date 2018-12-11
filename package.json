@@ -1,7 +1,12 @@
 {
+  "name": "nodejs-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "dependencies": {
-    "moo": "^0.4.3",
-    "mh": "^1.1.2",
-    "neat": "^1.2.22"
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "start": "node ."
   }
 }
