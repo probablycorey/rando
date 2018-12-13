@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
 
 app.listen(port, err => {
     if (err) throw err
-    console.log(`> Ready On Server http://localhost:${port}`)
+    console.log(`>> Ready On Server http://localhost:${port}`)
 })
