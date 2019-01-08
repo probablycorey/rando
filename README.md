@@ -1,3 +1,1 @@
-Everything is important.
-
-But why?
+well, let's not get ahead of ourselves
