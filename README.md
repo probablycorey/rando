@@ -1,1 +1,1 @@
-they say we wasted!
+wtf dudes
