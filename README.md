@@ -1,1 +1,1 @@
-what the shit
+they say we wasted!
